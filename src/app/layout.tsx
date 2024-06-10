@@ -4,6 +4,7 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 import { NextUIProvider } from "@nextui-org/react"
+import { Logo } from "@/components/logo"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className="">
-      <body className={inter.className}>
-        <NextUIProvider>{children}</NextUIProvider>
+      <body
+        className={`flex min-h-screen flex-col items-center justify-between p-4 ${inter.className}`}
+      >
+        <NextUIProvider>
+          <Logo />
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   )
